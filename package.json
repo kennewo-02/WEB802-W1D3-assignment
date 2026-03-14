@@ -19,8 +19,10 @@
   "homepage": "https://github.com/kennewo-02/WEB802-W1D3-assignment#readme",
   "dependencies": {
     "body-parser": "^2.2.2",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "express-validator": "^7.3.1",
+    "mongoose": "^9.3.0",
     "pug": "^3.0.3"
   },
   "devDependencies": {
