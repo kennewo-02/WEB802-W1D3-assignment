@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('./models/Registration');
+require('./models/Registration')
 const app = require('./app');
 const mongoose = require('mongoose');
 
@@ -11,6 +11,7 @@ const server = app.listen(PORT, () => {
 });
 
 // Connect to MongoDB without deprecated options
+console.log("DATABASE:", process.env.DATABASE);
 mongoose.connect(process.env.DATABASE);
 
 mongoose.connection
