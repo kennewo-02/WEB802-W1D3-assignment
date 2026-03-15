@@ -3,6 +3,8 @@ const mongoose = require( 'mongoose');
 const { check, validationResult} = require('express-validator');
 const router = express.Router();
 const Registration = mongoose.model('Registration');
+const path = require('path');
+const auth = require('http-auth');
 
 router.get('/', 
     function(req, res) {
@@ -11,7 +13,11 @@ router.get('/',
 
 router.get('/registrations', 
     (req, res) => {
-    res.render('index', {title: 'Listing registrations'});
+        Registration.find()
+        .then((registrations) => {
+            res.render('index', {title: 'Listing registrations', registrations });
+        })
+        .catch(() => {res.send('Sorry! Something went wrong.'); });
 });
 
 router.post('/', 
